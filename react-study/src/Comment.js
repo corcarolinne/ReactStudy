@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 
 class Comment extends Component {
+
+  _handleDelete(e) {
+    e.preventDefault();
+    if(confirm("Are you sure?")) {
+      this.props.onDelete(this.props.comment);
+    }
+  }
+
   render() {
     return (
       <div className="comment">
@@ -9,7 +17,7 @@ class Comment extends Component {
           {this.props.body}
         </p>
         <div className="comment-footer">
-          <a href="#" className="comment-footer-delete">
+          <a href="#" onClick={this._handleDelete.bind(this)}>
             Delete comment
           </a>
         </div>
