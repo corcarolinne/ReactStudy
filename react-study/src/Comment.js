@@ -5,7 +5,7 @@ class Comment extends Component {
   _handleDelete(e) {
     e.preventDefault();
     if(confirm("Are you sure?")) {
-      this.props.onDelete(this.props.comment);
+      this.props.onDelete(this.props);
     }
   }
 

@@ -53,7 +53,7 @@ class CommentBox extends Component {
 
   _deleteComment(comment) {
     const comments = [...this.state.comments];
-    const commentIndex = comments.indexOf(comment);
+    const commentIndex = comments.map(item => item.author).indexOf(comment.author);
     comments.splice(commentIndex, 1);
     this.setState({ comments });
   }
